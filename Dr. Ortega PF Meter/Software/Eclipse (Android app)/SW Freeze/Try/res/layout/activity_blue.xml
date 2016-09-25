@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#2196F3" >
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Bluetooth"
+        android:textColor="#FFFFFF"
+        android:textSize="38sp" />
+
+    <Button
+        android:id="@+id/open"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText1"
+        android:layout_below="@+id/label"
+        android:layout_marginTop="50dp"
+        android:layout_toLeftOf="@+id/progressBar1"
+        android:background="#76FF03"
+        android:onClick="startConnect"
+        android:text="Find"
+        android:textColor="#FFFFFF" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="28dp"
+        android:background="#FFFFFF"
+        android:editable="true"
+        android:ems="10"
+        android:gravity="top|left"
+        android:height="250dp"
+        android:hint="Message Displays Here"
+        android:textAlignment="center"
+        android:textColor="#2196F3"
+        android:textStyle="italic"
+        android:width="300dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/open"
+        android:visibility="invisible" />
+
+</RelativeLayout>

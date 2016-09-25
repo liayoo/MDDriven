@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<ion-view ng-controller="LoginController">
+		<ion-header-bar class="bar-dark">
+			<div class="title">Welcome to MDDriven's mobile app</div>
+		</ion-header-bar>
+		<ion-content>
+			<div class="list">
+				<div class="item item-input padding">
+					<label class="item-input-wrapper">
+						<input type="text" placeholder="Username" ng-model="id"/>
+					</label>
+				</div>
+				<div class="item item-input padding">
+					<label class="item-input-wrapper">
+						<input type="text" placeholder="Password" ng-model="pw"/>
+					</label>
+				</div>
+				</div>
+				<ion-checkbox checked="true" ng-model="stayLoggedIn">
+					<ion-label>Stay logged in</ion-label>
+				</ion-checkbox>
+				<div>
+					<button class="button button-small button-dark icon icon-right" ng-click="signin(id, pw, stayLoggedIn)">Login</button>
+					<a href="#/register">Register</a>
+				</div>
+		</ion-content>
+	</ion-view>
+</html>
