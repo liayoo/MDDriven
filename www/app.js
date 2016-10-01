@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic','login','register','measure','settings','sidemenu','services','ble.controllers'])
+angular.module('starter', ['ionic','login','register','measure','settings','services','ble.controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -42,30 +42,36 @@ angular.module('starter', ['ionic','login','register','measure','settings','side
       url: '/login',
       templateUrl: 'states/home/login.html'
     })
-    .state('main', {
-      url: '/main',
-      abstract: true,
-      templateUrl: 'states/main/main.html'
-    })
-    .state('sidemenu', {
-      url: '/sidemenu',
-      views: {
-        'sidemenu': {
-          templateUrl: 'shared/sidemenu/sidemenu.html'
-        }
-      }
-    })
     .state('register', {
       url: '/register',
       templateUrl: 'states/home/register.html'
     })
+    .state('sidemenu.main', {
+      url: '/main',
+      templateUrl: 'states/main/main.html'
+    })
+    .state('sidemenu', {  //remove sidemenuController?
+      url: '/sidemenu',
+      abstract: true,
+      templateUrl: 'shared/sidemenu/sidemenu.html'
+    })
     .state('measure', {
       url: '/measure',
-      templateUrl: 'states/main/measure.html'
+      views: {
+        'menuContent' :{
+          templateUrl: 'states/main/measure.html',
+          controller: "MeasureController"
+        }
+      }
     })
-    .state('settings', {
+    .state('sidemenu.settings', {
       url: '/settings',
-      templateUrl: 'states/users/settings.html'
+      views: {
+        'menuContent': {
+          templateUrl: 'states/users/settings.html',
+          controller: "SettingsController"
+        }
+      }
     });
     $urlRouterProvider.otherwise('main/login');
 })

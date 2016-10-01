@@ -1,8 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-	<ion-pane>
-	<ion-view name="sidemenu">
-		
+	<head>
+		<title></title>
+	</head>
+	<script id="shared/sidemenu/sidemenu.html" type="text/ng-template">
+		<ion-side-menus>
+
+			<ion-side-menu-content>
+				<ion-nav-bar class="bar-positive">
+					<ion-nav-back-button></ion-nav-back-button>
+					<ion-nav-buttons side="left">
+						<button menu-toggle="left" class="button button-icon icon icon-navicon" ng-click="toggleLeftSideMenu()"><i class="icon ion-navicon-round"></i></button>
+					</ion-nav-buttons>
+				</ion-nav-bar>
+				<ion-nav-view name="menuContent"></ion-nav-view>
+			</ion-side-menu-content>
+
+			<ion-side-menu side="left">
+				<ion-header-bar class="bar-assertive">
+					<!--<h1 class="title">Left Menu</h1>-->
+				</ion-header-bar>
+				<ion-content>
+					<ion-list>
+						<ion-item  class="item item-icon-left  item-icon-right" nav-clear menu-close href="#"><i class="icon ion-ios-infinite"></i>Lia Yoo<i ng-show="menuData.iconOn" class="icon ion-checkmark-round"></i></ion-item>
+            <ion-item menu-close ui-sref="actionPlan">Action Plan</ion-item>
+            <ion-item menu-close ui-sref="settings">Settings</ion-item>
+					</ion-list>
+				</ion-content>
+			</ion-side-menu>
+
+		</ion-side-menus>
+	</script>
+
+	<ion-view view-title="Welcome">
+		<ion-content>
+			<p>Button for connecting to the device? (turn BLE on, pick among available devices)</p>
+			<p>Button for measuring the peak flow (move to measure.html where it will guide through the measuring process and show the results)</p>
+		</ion-content>
 	</ion-view>
-	</ion-pane>
 </html>
